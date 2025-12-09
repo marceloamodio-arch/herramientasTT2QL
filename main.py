@@ -233,26 +233,7 @@ def mostrar_login():
                         st.error("❌ Usuario o contraseña incorrectos")
         
         st.markdown('</div>', unsafe_allow_html=True)
-        
-        # Información de ayuda
-        with st.expander("ℹ️ Ayuda e Información"):
-            st.markdown("""
-                **Credenciales por defecto:**
-                - Usuario: `admin`
-                - Contraseña: `admin123`
-                
-                **Niveles de usuario:**
-                - **Normal**: Acceso a calculadoras y herramientas
-                - **Administrador**: Acceso completo + gestión del sistema
-                
-                **💡 Consejo para mantener tu sesión:**  
-                Después de iniciar sesión, **guarda la página como marcador** (Ctrl+D / Cmd+D).  
-                De esta forma podrás acceder directamente sin volver a iniciar sesión cada vez.
-                
-                **¿Olvidaste tu contraseña?**  
-                Contacta al administrador del sistema para restablecerla.
-            """)
-    
+     
     # Footer
     st.markdown("""
         <div class='footer'>
