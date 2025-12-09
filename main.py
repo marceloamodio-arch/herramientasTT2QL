@@ -185,7 +185,6 @@ def mostrar_login():
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        st.markdown('<div class="login-box">', unsafe_allow_html=True)
         st.markdown("### 🔐 Iniciar Sesión")
         
         with st.form("login_form"):
@@ -200,11 +199,7 @@ def mostrar_login():
                 placeholder="Ingresa tu contraseña"
             )
             
-            
-            col_btn1, col_btn2 = st.columns([1, 1])
-            
-            with col_btn1:
-                submit = st.form_submit_button("🔓 Ingresar", use_container_width=True, type="primary")
+            submit = st.form_submit_button("🔓 Ingresar", use_container_width=True, type="primary")
             
             if submit:
                 if not username or not password:
@@ -233,7 +228,7 @@ def mostrar_login():
                         st.error("❌ Usuario o contraseña incorrectos")
         
         st.markdown('</div>', unsafe_allow_html=True)
-     
+       
     # Footer
     st.markdown("""
         <div class='footer'>
