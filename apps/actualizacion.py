@@ -236,7 +236,7 @@ except Exception as e:
     st.stop()
 
 # Título principal
-st.markdown("# 📈 CALCULADORA DE ACTUALIZACIÓN")
+st.markdown("# 📈 CALCULADORA DE ACTUALIZACIÓN E INTERESES")
 st.markdown("---")
 
 # Diseño en dos columnas principales
@@ -289,7 +289,7 @@ with col_izq:
         step=1
     )
     
-    calcular = st.button("🔄 CALCULAR", use_container_width=True, type="primary")
+    calcular = st.button("⚡ CALCULAR", use_container_width=True, type="primary")
 
 # Columna derecha - RESULTADOS
 with col_der:
@@ -335,22 +335,22 @@ with col_der:
         
         # RIPTE
         st.success(f"**RIPTE + {r['tasa_pura_ripte']}%**")
-        st.metric(label="", value=formato_moneda(r['ripte_total']), label_visibility="collapsed")
+        st.metric(label="Total", value=formato_moneda(r['ripte_total']), label_visibility="collapsed")
         st.caption(f"Coef: {r['ripte_coef']:.4f} | Int: {formato_moneda(r['ripte_interes'])}")
         
         # Tasa Activa
         st.success("**Tasa Activa**")
-        st.metric(label="", value=formato_moneda(r['tasa_total']), label_visibility="collapsed")
+        st.metric(label="Total", value=formato_moneda(r['tasa_total']), label_visibility="collapsed")
         st.caption(f"Tasa Acumulada: {r['tasa_pct']:.2f}%")
         
         # IPC
         st.info(f"**IPC + {r['tasa_pura_ipc']}%**")
-        st.metric(label="", value=formato_moneda(r['ipc_total']), label_visibility="collapsed")
+        st.metric(label="Total", value=formato_moneda(r['ipc_total']), label_visibility="collapsed")
         st.caption(f"Inflación: {r['ipc_inflacion']:.2f}% | Int: {formato_moneda(r['ipc_interes'])}")
         
         st.caption(f"Período: {r['fecha_inicial'].strftime('%d/%m/%Y')} al {r['fecha_final'].strftime('%d/%m/%Y')}")
     else:
-        st.info("Ingrese los datos y presione CALCULAR")
+        st.info("👈 Ingrese los datos y presione CALCULAR")
 
 # Sección inferior - Desglose y datos
 st.markdown("---")
@@ -431,8 +431,6 @@ if 'resultados' in st.session_state:
         Todos los cálculos se realizan utilizando precisión decimal para garantizar exactitud legal.
         Los redondeos se aplican según normas contables argentinas (Resoluciones Técnicas 17 y 41).
         """)
-else:
-    st.info("Calcule para ver el desglose detallado")
 
 # Mostrar últimos datos disponibles
 st.markdown("---")

@@ -38,9 +38,9 @@ APLICACIONES = {
         "nivel_requerido": "normal"
     },
     "actualizacion": {
-        "nombre": "Actualización de Valores",
+        "nombre": "Actualización e Intereses",
         "icono": "📈",
-        "descripcion": "Actualización de montos mediante índices IPC, RIPTE y otros",
+        "descripcion": "Actualización de montos mediante índices IPC, RIPTE y tasas de interés",
         "archivo": "apps.actualizacion",
         "función": "main",
         "nivel_requerido": "normal"
@@ -63,7 +63,7 @@ APLICACIONES = {
     },
     "honorarios": {
         "nombre": "Cálculo de Honorarios",
-        "icono": "⚖️",
+        "icono": "💵",
         "descripcion": "Determinación de honorarios profesionales según Ley 14.967",
         "archivo": "apps.honorarios",
         "función": "main",

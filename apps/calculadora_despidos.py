@@ -27,7 +27,7 @@ from utils.funciones_comunes import safe_parse_date, days_in_month, formato_mone
 mostrar_sidebar_navegacion('despidos')
 
 # Título de la app
-st.markdown("# ⚖️ CALCULADORA DE DESPIDOS")
+st.markdown("# 📊 CALCULADORA DE DESPIDOS")
 st.markdown("### Indemnizaciones Laborales - Ley 20.744")
 st.markdown("---")
 
@@ -464,7 +464,7 @@ with col_inputs:
 
     se_pago_preaviso = st.checkbox("¿Se pagó preaviso?", value=False, key="preaviso_checkbox")
     
-    calcular_btn = st.button("🧮 CALCULAR INDEMNIZACIÓN", use_container_width=True, type="primary", key="calcular_button")
+    calcular_btn = st.button("⚡ CALCULAR INDEMNIZACIÓN", use_container_width=True, type="primary", key="calcular_button")
 
 with col_results:
     if calcular_btn:
@@ -638,6 +638,9 @@ if 'datos_calculo' in st.session_state:
             value=formato_moneda(total_final),
             label_visibility="collapsed"
         )
+else:
+    with col_results:
+        st.info("👈 Ingrese los datos y presione CALCULAR")
 
 # Actualizaciones estilo LRT
 if 'datos_actualizacion' in st.session_state:

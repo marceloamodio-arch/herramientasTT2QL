@@ -94,7 +94,7 @@ def mostrar_sidebar_navegacion(app_actual=None):
             ('actualizacion', '📈 Actualizacion'),
             ('lrt', '🧮 LRT'),
             ('despidos', '📊 Despidos'),
-            ('honorarios', '⚖️ Honorarios'),
+            ('honorarios', '💵 Honorarios'),
             ('admin', '⚙️ Admin')
         ]
         

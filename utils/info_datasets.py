@@ -57,7 +57,6 @@ def mostrar_ultimos_datos_universal():
             valor_fmt = f"{valor:.2f}".replace('.', ',')
             resultado = f"TASA ACTIVA {fecha.strftime('%d/%m/%Y')}: {valor_fmt}%"
             textos_datos.append(resultado)
-            print(f"[INFO_DATASETS] TASA OK: {resultado}")
     except Exception as e:
         print(f"[INFO_DATASETS] ERROR en TASA: {type(e).__name__}: {e}")
         import traceback
@@ -82,8 +81,8 @@ def mostrar_ultimos_datos_universal():
     # ========== PISO SRT ==========
     try:
         df_pisos = pd.read_csv("data/dataset_pisos.csv", encoding='utf-8')
-        df_pisos['fecha_inicio'] = pd.to_datetime(df_pisos['fecha_inicio'], format='%d/%m/%y')
-        df_pisos['fecha_fin'] = pd.to_datetime(df_pisos['fecha_fin'], format='%d/%m/%y', errors='coerce')
+        df_pisos['fecha_inicio'] = pd.to_datetime(df_pisos['fecha_inicio'], format='%d/%m/%Y')
+        df_pisos['fecha_fin'] = pd.to_datetime(df_pisos['fecha_fin'], format='%d/%m/%Y', errors='coerce')
         if not df_pisos.empty:
             df_pisos = df_pisos.sort_values('fecha_inicio', ascending=False)
             ultimo = df_pisos.iloc[0]
@@ -101,11 +100,6 @@ def mostrar_ultimos_datos_universal():
             textos_datos.append(f"PISO SRT {norma} {periodo}: $ {monto_fmt}")
     except Exception as e:
         print(f"[INFO_DATASETS] ERROR en PISOS: {e}")
-    
-    # Debug: mostrar qué se va a renderizar
-    print(f"[INFO_DATASETS] Total items a mostrar: {len(textos_datos)}")
-    for i, texto in enumerate(textos_datos, 1):
-        print(f"[INFO_DATASETS]   {i}. {texto}")
     
     # Mostrar alerta solo si hay datos
     if textos_datos:

@@ -493,8 +493,7 @@ if 'input_data' not in st.session_state:
 # Header personalizado
 st.markdown("""
 <div class="main-header">
-    <h1>CALCULADORA INDEMNIZACIONES LEY 24.557</h1>
-    <h2>Y ACTUALIZACIONES.</h2>
+    <h1>🧮 CALCULADORA INDEMNIZACIONES LEY 24.557</h1>
 </div>
 """, unsafe_allow_html=True)
 
@@ -552,7 +551,7 @@ with col6:
         value=True
     )
 with col7:
-    calcular = st.button("🧮 CALCULAR", use_container_width=True, type="primary")
+    calcular = st.button("⚡ CALCULAR", use_container_width=True, type="primary")
 
 if calcular:
     try:
@@ -1108,39 +1107,6 @@ De la liquidación practicada, traslado a las partes por el plazo de cinco (5) d
             - Actualización de prestaciones según RIPTE
             - Metodología de aplicación del coeficiente
             """)
-else:
-    # Mostrar mensaje inicial
-    st.info("👈 Complete los datos en el panel lateral y presione CALCULAR para obtener los resultados")
-    
-    # Mostrar información general
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.markdown("""
-        ### 📊 Características
-        - Cálculo automático según Ley 24.557
-        - Actualización por RIPTE + 3%
-        - Actualización por Tasa Activa BNA
-        - Comparación con inflación (IPC)
-        """)
-    
-    with col2:
-        st.markdown("""
-        ### ⚖️ Uso judicial
-        - Para el apoyo en calculos sentencia
-        - Para el calculo en las audiencias.
-        - Para apoyo en la liquidación
-        - Uso en secretaria y relatoria.
-        """)
-    
-    with col3:
-        st.markdown("""
-        ### 📄 Documentos
-        - Texto para sentencia
-        - Liquidación judicial
-        - Tabla de mínimos SRT
-        - Generación de PDF para imprimir
-        """)
 
 # Mostrar últimos datos disponibles
 st.markdown("---")

@@ -27,7 +27,7 @@ from utils.funciones_comunes import numero_a_letras
 mostrar_sidebar_navegacion('ibm')
 
 # Titulo de la app
-st.markdown("# 📊 CALCULADORA IBM - LEY 24.557")
+st.markdown("# 💰 CALCULADORA IBM - LEY 24.557")
 st.markdown("### Ingreso Base Mensual - Art. 12 Inc. 1")
 st.markdown("---")
 
@@ -299,7 +299,7 @@ if 'salarios' not in st.session_state:
     st.session_state.salarios = {}
 
 # TABLA DE CÁLCULO
-st.subheader("💰 Tabla de Cálculo de Salarios")
+st.subheader("🔢 Tabla de Cálculo de Salarios")
 
 # Encabezados de la tabla
 col_headers = st.columns([0.5, 1.2, 1.5, 1, 1.2, 1.5, 0.8])
@@ -331,7 +331,7 @@ for mes in meses:
     
     # Checkbox
     with cols[0]:
-        incluir = st.checkbox("", value=True, key=f"c_{key}", label_visibility="collapsed")
+        incluir = st.checkbox("Incluir", value=True, key=f"c_{key}", label_visibility="collapsed")
     
     # Período
     with cols[1]:

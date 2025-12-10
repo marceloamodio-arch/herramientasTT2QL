@@ -66,7 +66,11 @@ def convertir_a_jus(monto_pesos, fecha_conversion, df_jus):
 df_jus = cargar_dataset_jus()
 
 # Título principal
-st.title("⚖️ CALCULADORA DE HONORARIOS PROFESIONALES")
+st.title("💵 CALCULADORA DE HONORARIOS PROFESIONALES")
+st.markdown("---")
+
+# Alerta informativa
+st.info("👈 Ingrese los datos y presione CALCULAR")
 st.markdown("---")
 
 # Tabs
@@ -102,7 +106,7 @@ with tab1:
             key="fecha_jus"
         )
         
-        calcular_jus = st.button("🔄 CONVERTIR A JUS", use_container_width=True, type="primary")
+        calcular_jus = st.button("⚡ CONVERTIR A JUS", use_container_width=True, type="primary")
     
     with col_der:
         st.markdown("### 📊 Resultado")
