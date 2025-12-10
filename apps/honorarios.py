@@ -10,7 +10,7 @@ import pandas as pd
 from datetime import datetime, date
 from utils.data_loader import get_ultimo_dato
 from utils.navegacion import mostrar_sidebar_navegacion
-from utils.info_datasets import mostrar_ultimos_datos
+from utils.info_datasets import mostrar_ultimos_datos_universal
 from utils.funciones_comunes import formato_moneda
 
 # Sidebar de navegación
@@ -67,10 +67,6 @@ df_jus = cargar_dataset_jus()
 
 # Título principal
 st.title("💵 CALCULADORA DE HONORARIOS PROFESIONALES")
-st.markdown("---")
-
-# Alerta informativa
-st.info("👈 Ingrese los datos y presione CALCULAR")
 st.markdown("---")
 
 # Tabs
@@ -165,7 +161,7 @@ with tab1:
                     - **Monto actualizado:** {resultado['jus']:,.2f} JUS × {formato_moneda(valor_jus_actual)} = **{formato_moneda(monto_actualizado)}**
                     """)
         else:
-            st.info("👆 Ingrese los datos y presione CONVERTIR A JUS")
+            st.info("👈 Ingrese los datos y presione CONVERTIR A JUS")
 
 # ============================================
 # TAB 2: REGULACIÓN LEY 24432
@@ -472,9 +468,11 @@ with tab2:
             - **TOTAL GENERAL: {formato_moneda(total_usado)} ({pct_usado:.2f}%)**
             - **REMANENTE: {formato_moneda(limite_25 - total_usado)} ({(25.0 - pct_usado):.2f}%)**
             """)
+
+# Mostrar últimos datos disponibles
 st.markdown("---")
-if 'data_manager' in st.session_state:
-    mostrar_ultimos_datos(st.session_state.data_manager)
+mostrar_ultimos_datos_universal()
+
 # Footer
 st.markdown("---")
 st.caption("**CALCULADORA DE HONORARIOS PROFESIONALES** | Sistema de Regulación Legal")
